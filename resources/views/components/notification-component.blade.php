@@ -2,6 +2,7 @@
 use \Illuminate\Support\Facades\Session;
 ?>
 
+
 @push('js')
 <script>
     let Toast = Swal.mixin({
@@ -44,11 +45,13 @@ use \Illuminate\Support\Facades\Session;
 @foreach ($message as $m)
 <script>
     success_message('{{ addslashes($m) }}');
+
 </script>
 @endforeach
 @else
 <script>
     success_message('{{ addslashes($message) }}');
+
 </script>
 @endif
 @endif
@@ -59,11 +62,13 @@ use \Illuminate\Support\Facades\Session;
 @foreach ($message as $m)
 <script>
     info_message('{{ addslashes($m) }}');
+
 </script>
 @endforeach
 @else
 <script>
     info_message('{{ addslashes($message) }}');
+
 </script>
 @endif
 @endif
@@ -74,11 +79,13 @@ use \Illuminate\Support\Facades\Session;
 @foreach ($message as $m)
 <script>
     warning_message('{{ addslashes($m) }}');
+
 </script>
 @endforeach
 @else
 <script>
     warning_message('{{ addslashes($message) }}');
+
 </script>
 @endif
 @endif
@@ -89,11 +96,13 @@ use \Illuminate\Support\Facades\Session;
 @foreach ($message as $m)
 <script>
     error_message('{{ addslashes($m) }}');
+
 </script>
 @endforeach
 @else
 <script>
     error_message('{{ addslashes($message) }}');
+
 </script>
 @endif
 @endif
