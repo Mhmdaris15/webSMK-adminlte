@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BidangStudiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,5 @@ Route::get('/whatever', function () {
 })->name('whatever');
 
 Route::resource('users', UserController::class)->middleware('auth');
+
+Route::resource('bidstudi', BidangStudiController::class)->middleware('auth');

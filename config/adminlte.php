@@ -266,12 +266,6 @@ return [
     */
 
     'menu' => [
-        ['header' => 'User Setting'],
-        [
-            'text' => 'user',
-            'url'  => '/users',
-            'icon' => 'fas fa-fw fa-user',
-        ],
         // Navbar items:
         [
             'type'         => 'navbar-search',
@@ -282,89 +276,189 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+        [
+            'header'    => 'PENGATURAN PENGGUNA',
+            'can'       => 'admin-only',
+        ],
+        [
+            'text' => 'Pengguna',
+            'url' => '/users',
+            'icon' => 'fa fa-users',
+            'can' => 'admin-only',
+             'active' => true,
+        ],
+        [
+            'header' => 'PENGATURAN PEMBELAJARAN',
+            'can' => 'admin-only'
+        ],
+        [
+            'text' => 'Bidang Studi',
+            'url' => '/bidstudi',
+            'icon' => 'fa fa-university',
+            'can' => 'admin-only',
+            'active' => true,
+        ],
+        [
+            'text' => 'Standar Kompetensi',
+            'url' => '/standkomp',
+            'icon' => 'fa fa-tasks',
+            'can' => 'admin-only'
+            // 'active' => true,
+        ],
+        [
+            'text' => 'Kompetensi Keahlian',
+            'url' => '/jurusan',
+            'icon' => 'fa fa-flag',
+            'can' => 'admin-only'
+            // 'active' => true,
+        ],
+        [
+            'text' => 'Mata Pelajaran',
+            'url' => '/mapel',
+            'icon' => 'fa fa-tags',
+            'can' => 'admin-only'
+            // 'active' => true,
+        ],
+        [
+            'text' => 'Guru',
+            'url' => '/guru',
+            'icon' => 'fa fa-graduation-cap',
+            'can' => 'admin-only'
+            // 'active' => true,
+        ],
+        [
+            'text' => 'Siswa',
+            'url' => '/siswa',
+            'icon' => 'fa fa-user-circle',
+            'can' => 'admin-only'
+            // 'active' => true,
+        ],
+        [
+            'text' => 'Kelas',
+            'url' => '/kelas',
+            'icon' => 'fa fa-building',
+            'can' => 'admin-only'
+            // 'active' => true,
+        ],
+        [
+            'header' => 'AKUN GURU',
+            'can' => 'guru-only'
+        ],
+        [
+            'text' => 'Profile',
+            'url' => '/profil-guru',
+            'icon' => 'fa fa-user-md',
+            'can' => 'guru-only'
+            // 'active' => true,
+        ],
+        [
+            'text' => 'Nilai',
+            'url' => '/nilai-guru',
+            'icon' => 'fa fa-star',
+            'can' => 'guru-only'
+            // 'active' => true,
+        ],
+        [
+            'header' => 'AKUN SISWA',
+            'can' => 'siswaonly'
+        ],
+        [
+            'text' => 'Profile',
+            'url' => '/profil-siswa',
+            'icon' => 'fa fa-user-md',
+            'can' => 'siswa-only'
+            // 'active' => true,
+        ],
+        [
+            'text' => 'Nilai',
+            'url' => '/nilai-siswa',
+            'icon' => 'fa fa-book',
+            'can' => 'siswa-only'
+            // 'active' => true,
+        ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+//        [
+//            'type' => 'sidebar-menu-search',
+//            'text' => 'search',
+//        ],
+//        [
+//            'text' => 'blog',
+//            'url'  => 'admin/blog',
+//            'can'  => 'manage-blog',
+//        ],
+//        [
+//            'text'        => 'pages',
+//            'url'         => 'admin/pages',
+//            'icon'        => 'far fa-fw fa-file',
+//            'label'       => 4,
+//            'label_color' => 'success',
+//        ],
+//        ['header' => 'account_settings'],
+//        [
+//            'text' => 'profile',
+//            'url'  => 'admin/settings',
+//            'icon' => 'fas fa-fw fa-user',
+//        ],
+//        [
+//            'text' => 'change_password',
+//            'url'  => 'admin/settings',
+//            'icon' => 'fas fa-fw fa-lock',
+//        ],
+//        [
+//            'text'    => 'multilevel',
+//            'icon'    => 'fas fa-fw fa-share',
+//            'submenu' => [
+//                [
+//                    'text' => 'level_one',
+//                    'url'  => '#',
+//                ],
+//                [
+//                    'text'    => 'level_one',
+//                    'url'     => '#',
+//                    'submenu' => [
+//                        [
+//                            'text' => 'level_two',
+//                            'url'  => '#',
+//                        ],
+//                        [
+//                            'text'    => 'level_two',
+//                            'url'     => '#',
+//                            'submenu' => [
+//                                [
+//                                    'text' => 'level_three',
+//                                    'url'  => '#',
+//                                ],
+//                                [
+//                                    'text' => 'level_three',
+//                                    'url'  => '#',
+//                                ],
+//                            ],
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'text' => 'level_one',
+//                    'url'  => '#',
+//                ],
+//            ],
+//        ],
+//        ['header' => 'labels'],
+//        [
+//            'text'       => 'important',
+//            'icon_color' => 'red',
+//            'url'        => '#',
+//        ],
+//        [
+//            'text'       => 'warning',
+//            'icon_color' => 'yellow',
+//            'url'        => '#',
+//        ],
+//        [
+//            'text'       => 'information',
+//            'icon_color' => 'cyan',
+//            'url'        => '#',
+//        ],
     ],
 
     /*

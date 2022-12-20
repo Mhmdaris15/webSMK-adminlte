@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <label for="exampleInputPassword">Password</label>
                         <input type="password" class="form-control
-@error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="Password" name="password">
+@error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="Passwo  rd" name="password">
                         @error('password') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
                     <div class="form-group">

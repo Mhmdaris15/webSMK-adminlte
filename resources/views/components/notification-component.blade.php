@@ -1,4 +1,4 @@
-<?php 
+<?php
 use \Illuminate\Support\Facades\Session;
 ?>
 
@@ -106,3 +106,4 @@ use \Illuminate\Support\Facades\Session;
 </script>
 @endif
 @endif
+@endpush

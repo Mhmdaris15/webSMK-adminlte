@@ -12,6 +12,17 @@
                 <a href="{{route('users.create')}}" class="btn btn-primary mb-2">
                     Tambah
                 </a>
+                {{--Show alert with Notification Component --}}
+                @if(session('success_message'))
+                    <x-adminlte-alert theme="success" title="Success!" dismissable >
+                        {{session('success_message')}}
+                    </x-adminlte-alert>
+                @endif
+                @if(session('error_message'))
+                    <x-adminlte-alert theme="danger" title="Error!" dismissable>
+                        {{session('error_message')}}
+                    </x-adminlte-alert>
+                @endif
                 <table class="table table-hover table-bordered table-stripped" id="example2">
                     <thead>
                         <tr>

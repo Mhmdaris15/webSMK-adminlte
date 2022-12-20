@@ -75,7 +75,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        //Menampilkan Form Edit
+        $user = User::find($id);
+        if (!$user) return redirect()->route('users.index')->with('error_message', 'User dengan id'. $id .' tidak ditemukan');
+        return view('users.edit', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -87,7 +92,25 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Mengedit Data User
+        $request->validate([
+            'nis' => 'required|unique:users,nis,'.$id,
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'sometimes|nullable|confirmed',
+            'level' => 'required',
+            'aktif' => 'required'
+        ]);
+        $user = User::find($id);
+        $user->nis = $request->nis;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->password) $user->password = bcrypt($request->password);
+        $user->level = $request->level;
+        $user->aktif = $request->aktif;
+        $user->save();
+
+        return redirect()->route('users.index')->with('success_message', 'Berhasil mengubah user');
     }
 
     /**
@@ -96,8 +119,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        // Menghapus user
+        $user = User::find($id);
+        if($user->id == $request->user()->id) return redirect()->route('users.index')->with('error_message', 'Tidak bisa menghapus diri sendiri');
+        if($user->level == 'admin') return redirect()->route('users.index')->with('error_message', 'Tidak bisa menghapus admin');
+        if($user) $user->delete();
+
+        return redirect()->route('users.index')->with('success_message', 'Berhasil menghapus user');
     }
 }
