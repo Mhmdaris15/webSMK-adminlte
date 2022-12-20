@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BidangStudiController;
+use App\Http\Controllers\StandarKompetensiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +40,5 @@ Route::get('/whatever', function () {
 Route::resource('users', UserController::class)->middleware('auth');
 
 Route::resource('bidstudi', BidangStudiController::class)->middleware('auth');
+
+Route::resource('standkomp', StandarKompetensiController::class)->middleware('auth');

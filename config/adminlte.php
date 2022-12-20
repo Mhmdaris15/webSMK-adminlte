@@ -285,7 +285,7 @@ return [
             'url' => '/users',
             'icon' => 'fa fa-users',
             'can' => 'admin-only',
-             'active' => true,
+            'active' => true,
         ],
         [
             'header' => 'PENGATURAN PEMBELAJARAN',
@@ -296,7 +296,7 @@ return [
             'url' => '/bidstudi',
             'icon' => 'fa fa-university',
             'can' => 'admin-only',
-            'active' => true,
+//            'active' => true,
         ],
         [
             'text' => 'Standar Kompetensi',
